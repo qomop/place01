@@ -1,0 +1,89 @@
+
+/* Our canvas is actually 50x50, but we are going to represent each pixel with a 10x10 box */
+canvas {
+    margin-top: 10px;
+    height: 500px;
+    width: 500px;
+    border: 2px solid #B0C4DE;
+  }
+
+
+  buttonOutlinedGreen {
+    background-color: white; 
+    border: 2px solid	#9ACD32;
+    color:black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.bttn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 13px 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 0px;
+  font-size: 0px; 
+  cursor: pointer;
+}
+.bttn:checked {
+  padding: 15px 15px;
+  border: 1px solid black;
+} 
+
+.bttn0 {background-color: #e7e7e7;} /* White*/
+.bttn1 {background-color: #C6C6C6;} /* Grey0*/
+.bttn2 {background-color: #868587;} /* Grey1 */
+.bttn3 {background-color: #242224;} /* Black */ 
+.bttn4 {background-color: #FFA7CF;} /* Pink */ 
+.bttn5 {background-color: #E60500;} /* Red */
+.bttn6 {background-color: #E69207;} /* Orange */
+.bttn7 {background-color: #9C6747;} /* Brown */
+.bttn8 {background-color: #E2D805;} /* Yellow */ 
+.bttn9 {background-color: #95DF41;} /* Green0 */ 
+.bttn10 {background-color: #04C108;} /* Green1 */
+.bttn11 {background-color: #00D5D9;} /* Blue0 */
+.bttn12 {background-color: #0080C1;} /* Blue1 */
+.bttn13 {background-color: #0000E5;} /* Blue2 */ 
+.bttn14 {background-color: #C453ED;} /* Purple */ 
+.bttn15 {background-color: #7E0080;} /* Viola */
+
+.picker {
+  
+  border-radius: 5px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  -webkit-transition: all linear .2s;
+  -moz-transition: all linear .2s;
+  -ms-transition: all linear .2s;
+  -o-transition: all linear .2s;
+  transition: all linear .2s;
+  border: thin solid rgb(161, 23, 23);
+}
+.picker:hover {
+  transform: scale(1.1);
+
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+

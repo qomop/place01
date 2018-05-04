@@ -1,0 +1,113 @@
+<html>
+    
+  <head>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Alegreya+SC');
+        body{
+          font-family: 'Alegreya SC', serif;
+        }
+     
+        body{
+          background: #eee;
+        }
+        p.ex1 {
+        margin-left:  -220px;
+        
+        }
+     
+        </style>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="/js/place.js"></script>
+    <script src="colorPick.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+      
+      
+      <title>Place Color</title>    
+       
+      
+  
+    <div align="center">
+        
+    <p>
+    <img class="pixelated" src = "placecolor.png" width="500px" >
+    <div>
+    dapp on <a href="https://nebulas.io/">nebulas blockchain</a>. you'll need chrome browser and nas coin
+    </div>
+    <canvas id="place1" width="500" height="500" 
+      style="position: absolute;"></canvas>
+    <canvas id="place" width="500" height="500" 
+      ></canvas>
+     
+      
+    
+    
+    <div  id="outputXY"  ></div> 
+    <p></p>
+  
+    <p> 
+        Select  position (left-click on image)
+       </p>
+   
+
+    <div class="controls">
+      X: <input value="" type="number" min="0" max="50" id="x-coord">
+       
+      Y: <input value="" type="number" min="0" max="50" id="y-coord"> 
+    </div>
+    <p > 
+     </p>
+  
+    <div class="controls">
+    Pick a color:  <input type="color" id="color" value="#9ACD32">
+    <p></p>
+     <!-- The controls where our users will enter the coords and color to place. 
+    <p > 
+     Submit smart contract
+     </p>
+     -->
+    <buttonOutlinedGreen id="submit">submit</button>
+        
+           
+          
+        </div>
+<!--
+<button class="bttn bttn0"></button>    
+<button class="bttn bttn1"></button>
+<button class="bttn bttn2"></button>
+<button class="bttn bttn3"></button>
+<button class="bttn bttn4"></button>
+<button class="bttn bttn5"></button>
+<button class="bttn bttn6"></button>    
+<button class="bttn bttn7"></button>
+<button class="bttn bttn8"></button>
+<button class="bttn bttn9"></button>
+<button class="bttn bttn10"></button>
+<button class="bttn bttn11"></button>
+<button class="bttn bttn12"></button>
+<button class="bttn bttn13"></button>
+<button class="bttn bttn14"></button>
+<button class="bttn bttn15"></button>
+
+
+   <label for="excolor3">Color: </label>
+          <input type="color" id="excolor3" name="excolor3" list="rainbow" value="#FF0000">
+      
+     
+      <datalist id="rainbow">
+          <option value="#FF0000">Red</option>
+          <option value="#FFA500">Orange</option>
+          <option value="#FFFF00">Yellow</option>
+          <option value="#008000">Green</option>
+          <option value="#FFFF00">Blue</option>
+          <option value="#4B0082">Indigo</option>
+          <option value="#EE82EE">Violet</option>
+      </datalist>
+*/-->
+    
+  </div>  
+  </body>
+</html>
