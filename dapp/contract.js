@@ -1,26 +1,24 @@
 "use strict";
 
-var DictItem = function(text) {
+var PlaceItem = function(text) {
 	if (text) {
 		var obj = JSON.parse(text);
-		this.key = obj.key;
-		this.value = obj.value;
-		this.author = obj.author;
+		this.key = obj.key; // string that looks like this: x:y
+		this.color = obj.color; // format: todo
 	} else {
 	    this.key = "";
-	    this.author = "";
-	    this.value = "";
+	    this.color = "";
 	}
 };
 
-DictItem.prototype = {
+PlaceItem.prototype = {
 	toString: function () {
 		return JSON.stringify(this);
 	}
 };
 
-var SuperDictionary = function () {
-    LocalContractStorage.defineMapProperty(this, "repo", {
+var SuperSetColor = function () {
+    LocalContractStorage.defineMapProperty(this, "placeColorContract", {
         parse: function (text) {
             return new DictItem(text);
         },
@@ -30,34 +28,35 @@ var SuperDictionary = function () {
     });
 };
 
-SuperDictionary.prototype = {
+PlaceColorContract.prototype = {
     init: function () {
         // todo
     },
 
     save: function (key, value) {
 
-        key = key.trim();
-        value = value.trim();
-        if (key === "" || value === ""){
-            throw new Error("empty key / value");
-        }
-        if (value.length > 64 || key.length > 64){
-            throw new Error("key / value exceed limit length")
-        }
+        // key = key.trim().split
+        // value = value.trim();
+        // todo: add validation
+        // if (key === "" || value === ""){
+        //     throw new Error("empty key / value");
+        // }
+        // if (value.length > 64 || key.length > 64){
+        //     throw new Error("key / value exceed limit length")
+        // }
 
         var from = Blockchain.transaction.from;
-        var dictItem = this.repo.get(key);
-        if (dictItem){
-            throw new Error("value has been occupied");
-        }
+        var colorItem = this.repo.get(key);
+        // if (dictItem){
+        //     // todo: uncomment if you want to disable overwrite
+        //     // throw new Error(key + " value has been occupied");
+        // }
 
-        dictItem = new DictItem();
-        dictItem.author = from;
-        dictItem.key = key;
-        dictItem.value = value;
+        colorItem = new PlaceItem();
+        colorItem.key = key;
+        colorItem.color = color;
 
-        this.repo.put(key, dictItem);
+        this.repo.put(key, colorItem);
     },
 
     get: function (key) {
@@ -68,4 +67,4 @@ SuperDictionary.prototype = {
         return this.repo.get(key);
     }
 };
-module.exports = SuperDictionary;
+module.exports = PlaceColorContract;
