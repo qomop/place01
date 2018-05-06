@@ -3,7 +3,10 @@ const express = require("express"),
 	server = require("http").createServer(app),
 	io = require("socket.io")(server),
 	PORT = process.env.PORT || 3000
-	
+
+var Nebulas = require("nebulas");
+var Neb = Nebulas.Neb;
+
 const CANVAS_ROWS = 50
 const CANVAS_COLS = 50
 
@@ -35,5 +38,28 @@ io.on("connection", socket => {
 		io.emit("canvas",canvas)
 	})	
 })
+
+// test code --- actually does nothing
+function fillColors() {
+    var neb = new Neb();
+     neb.setRequest(new Nebulas.HttpRequest("https://testnet.nebulas.io"));
+
+     neb.api.getAccountState("n1X7iPAv8oHcpYesH1Hf9wdpAJETpJLybWB").then(function (state) {
+         console.log(state);
+     }).catch(function (err) {
+         console.log(err);
+    });
+
+
+    for(var rows = 0;  rows < CANVAS_ROWS; rows++){
+    	canvas[rows] = []
+    	for(var cols = 0; cols < CANVAS_COLS; cols++){
+    		canvas[rows][cols] = "#FFF"
+    	}
+    }
+}
+fillColors();
+// test code --- actually does nothing
+
 
 server.listen(PORT)
