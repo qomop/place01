@@ -1,7 +1,8 @@
 const express = require("express"),
 	app = express(),
 	server = require("http").createServer(app),
-	io = require("socket.io")(server)
+	io = require("socket.io")(server),
+	PORT = process.env.PORT || 3000
 	
 const CANVAS_ROWS = 50
 const CANVAS_COLS = 50
