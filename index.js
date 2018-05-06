@@ -1,5 +1,3 @@
-import { WSAEAFNOSUPPORT } from "constants";
-
 const express = require("express"),
 	app = express(),
 	server = require("http").createServer(app),
