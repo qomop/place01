@@ -17,7 +17,7 @@ PlaceItem.prototype = {
 	}
 };
 
-var SuperSetColor = function () {
+var PlaceColorContract = function () {
     LocalContractStorage.defineMapProperty(this, "placeColorContract", {
         parse: function (text) {
             return new DictItem(text);
